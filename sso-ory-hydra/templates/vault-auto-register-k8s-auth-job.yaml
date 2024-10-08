@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: vault-auto-register-k8s-auth
+  namespace: { { .Values.vault.namespace } }
+  annotations:
+    "helm.sh/hook": "pre-install"
+    "helm.sh/hook-weight": "4"
+spec:
+  template:
+    spec:
+      containers:
+        - name: vault-k8s-auth
+          image: { { .Values.vault.image } }
+          command:
+            - /bin/sh
+            - -c
+            - |
+              vault auth enable kubernetes
+              vault write auth/kubernetes/config {{ .Values.vaultK8sAuth.configArgs | quote }}
+          volumeMounts:
+            - name: config-volume
+              mountPath: /config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: vault-k8s-auth-config

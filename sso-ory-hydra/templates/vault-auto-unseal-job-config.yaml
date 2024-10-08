@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vault-unseal-config
+  namespace: { { .Values.vault.namespace } }
+data:
+  unsealArgs: |
+    args:
+      - "--unseal-key={{ .Values.vault.unsealKey }}"
