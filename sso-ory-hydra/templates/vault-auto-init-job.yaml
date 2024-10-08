@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: vault-auto-init-job
+  namespace: { { .Values.vault.namespace } }
+  annotations:
+    "helm.sh/hook": "pre-install"
+    "helm.sh/hook-weight": "1"
+spec:
+  template:
+    spec:
+      containers:
+        - name: vault-init
+          image: { { .Values.vault.image } }
+          command: ["vault", "operator", "init"]
+          args: ["$(yq e '.args[]' /config/vault-init-config.yaml)"]
+          volumeMounts:
+            - name: config-volume
+              mountPath: /config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: vault-init-config

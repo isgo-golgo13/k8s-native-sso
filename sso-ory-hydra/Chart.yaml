@@ -1,0 +1,4 @@
+apiVersion: v2
+name: sso-ory-hydra
+description: A parachute-style ORY Hydra SSO deployment with CoreDNS Operator, Cert-Manager Operator, ExternalDNS Operator, Hashicorp Vault Operator and External Secrets Operator.
+version: 1.0.0

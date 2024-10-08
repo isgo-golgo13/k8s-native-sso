@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: vault-auto-unseal-job
+  namespace: { { .Values.vault.namespace } }
+  annotations:
+    "helm.sh/hook": "pre-install"
+    "helm.sh/hook-weight": "2"
+spec:
+  template:
+    spec:
+      containers:
+        - name: vault-unseal
+          image: { { .Values.vault.image } }
+          command: ["vault", "operator", "unseal"]
+          args: ["$(yq e '.args[]' /config/vault-unseal-config.yaml)"]
+          volumeMounts:
+            - name: config-volume
+              mountPath: /config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: vault-unseal-config
