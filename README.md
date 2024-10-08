@@ -5,7 +5,7 @@ Ory Hydra is a 100% official SSO OIDC-OAuth 2.0 Engine developed in Go and provi
 Kubernetes-Native SSO. This Helm Chart provides coordinating CNCF Kubernetes Operator add-ons to provision Hydra as turn-key SSO for Kubernetes.
 
 - Cert-Manager for TLS Certificate (Secret) Provisoning
-- CoreDNS for Kubernetes-Native DNS Provisioning
+- CoreDNS for Kubernetes-Native DNS (DNS Zone) Provisioning
 - ExternalDNS for Kubernetes-Native DNS Synchronization w/ CoreDNS Providers to Gateway API Gateways
 - External Secrets Operator to provide GitOps Kubernetes Secrets Provisioning
 - Hashicorp Vault Operator (PKI Engine) to provide Kubernetes-Native TLS Certificate Authority (CA)
