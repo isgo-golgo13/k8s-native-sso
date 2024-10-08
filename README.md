@@ -1,5 +1,5 @@
 # Kubernetes-Native Turn-Key SSO using Ory Hydra
-Kubernetes-Native Turn-Key SSO OIDC OAuth 2.0 using Ory Hydra
+Kubernetes-Native Turn-Key SSO OIDC OAuth 2.0 using Ory Hydra (SSO OIDC/OAuth 2.0 Engine in Go)
 
 ![ory-hydra-turn-key-k8s-architecture](docs/hydra-sso.png)
 
