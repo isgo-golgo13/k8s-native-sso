@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: vault-issuer
+  namespace: { { .Values.certManager.namespace } }
+spec:
+  vault:
+    server: "http://vault.{{ .Values.vault.namespace }}.svc:8200"
+    path: "pki/sign/{{ .Values.pki.role }}"
+    auth:
+      kubernetes:
+        role: "{{ .Values.certManager.k8sRole }}"

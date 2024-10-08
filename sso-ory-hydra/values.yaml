@@ -1,0 +1,33 @@
+vault:
+  namespace: "vault"
+  image: "vault:latest"
+  unsealKey: "your-unseal-key"
+
+certManager:
+  namespace: "cert-manager"
+  k8sRole: "cert-manager-role"
+
+pki:
+  domain: "hydra.com"
+  role: "hydra-dot-com"
+  ttl: "72h"
+
+nginx:
+  namespace: "nginx-gateway"
+
+externalDNS:
+  namespace: "external-dns"
+
+tls:
+  adminCertName: "admin-cert"
+  clientCertName: "client-cert"
+
+dns:
+  domain: "hydra.example.com"
+  adminHostname: "admin.hydra.example.com"
+  clientHostname: "client.hydra.example.com"
+  ttl: 60
+  host: "1.2.3.4" # IP address of the CoreDNS server
+
+client:
+  namespace: "hydra-client"
