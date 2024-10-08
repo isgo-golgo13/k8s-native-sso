@@ -1,7 +1,7 @@
 # Kubernetes-Native Turn-Key SSO using Ory Hydra
 Kubernetes-Native Turn-Key SSO OIDC OAuth 2.0 using Ory Hydra (SSO OIDC/OAuth 2.0 Engine in Go).
 
-Ory Hydra is a 100% official SSO OIDC-OAuth 2.0 Engine developed in Go and provides Kubernetes Operator to provsion
+Ory Hydra is a official SSO OIDC-OAuth 2.0 Engine developed in Go and provides Kubernetes Operator to provsion
 Kubernetes-Native SSO. This Helm Chart provides coordinating CNCF Kubernetes Operator add-ons to provision Hydra as turn-key SSO for Kubernetes.
 
 - Cert-Manager for TLS Certificate (Secret) Provisoning
