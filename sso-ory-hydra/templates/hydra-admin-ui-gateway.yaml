@@ -1,0 +1,23 @@
+apiVersion: gateway.networking.k8s.io/v1alpha2
+kind: Gateway
+metadata:
+  name: gateway-admin-ui
+  namespace: { { .Values.nginx.namespace } }
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: "{{ .Values.dns.hydraAdminHostname }}" # Admin UI DNS hostname
+    external-dns.alpha.kubernetes.io/ttl: "{{ .Values.dns.ttl }}" # Optional: DNS TTL value
+spec:
+  gatewayClassName: nginx
+  listeners:
+    - protocol: HTTPS
+      port: 443
+      tls:
+        certificateRef:
+          name: { { .Values.tls.adminCertName } }
+          group: cert-manager.io
+          kind: Certificate
+      routes:
+        kind: HTTPRoute
+        selector:
+          matchLabels:
+            app: hydra-admin
