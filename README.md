@@ -9,13 +9,12 @@ Kubernetes-Native SSO. This Helm Chart provides coordinating CNCF Kubernetes Ope
 
 The following service participant Kubernetes Operators are required.
 
-- Cert-Manager for TLS Certificate (Secret) Provisoning
+- Cert-Manager for TLS Certificate (TLS Secret) Provisoning
 - CoreDNS for Kubernetes-Native DNS (DNS Zone) Provisioning
-- ExternalDNS for Kubernetes-Native DNS Synchronization w/ CoreDNS Providers to Gateway API Gateways
-- External Secrets Operator to provide GitOps Kubernetes Secrets Provisioning
-- Hashicorp Vault Operator (PKI Engine) to provide Kubernetes-Native TLS Certificate Authority
-to Cert-Manager and to provide Kubernetes Secret Encryption for External Secrets Operator `ExternalSecrets`
-- Kubernetes `Gateway API` providing the `Gateway` CR and `HTTPRoute` CR for ingressing TLS traffic to Ory Hydra Admin UI and Ory Hydra Client UI.
+- ExternalDNS for Kubernetes-Native DNS Synchronization to CoreDNS Providers for Gateway API Gateways
+- External Secrets Operator (ESO) for GitOps Kubernetes Secrets Provisioning and Secret Syncing with Hashicorp Vault
+- Hashicorp Vault Operator (PKI Engine) for Kubernetes-Native TLS Certificate Authority to Cert-Manager
+- Kubernetes Gateway API (Gateway, HTTPRoute CRs) for routing TLS traffic to Ory Hydra Admin UI and Ory Hydra Client UI.
 
 The following graphic shows the architectural relationship of this turn-key SSO platform.
 
