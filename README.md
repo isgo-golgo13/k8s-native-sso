@@ -113,16 +113,18 @@ sso-ory-hydra
     │   ├── vault-init.yaml
     │   ├── vault-unseal.yaml
     │   ├── vault-init-pki.yaml
-    │   ├── vault-register-k8s-auth.yaml
+    │   ├── vault-k8s-auth.yaml
     │   ├── vault-init-config.yaml
     │   ├── vault-unseal-config.yaml
     │   ├── vault-k8s-auth-config.yaml
     │   ├── cert-manager-issuer.yaml
-    │   ├── external-dns-deployment.yaml
+    │   ├── external-dns-deployment.yaml *
     │   ├── core-dns-config.yaml
     │   ├── nginx-gateway.yaml
-    │   ├── client-gateway.yaml
-    │   ├── client-route.yaml
+    │   ├── hydra-admin-ui-gateway.yaml
+    │   ├── hydra-admin-ui-http-route.yaml
+    │   ├── hydra-client-ui-gateway.yaml
+    │   ├── hydra-client-ui-http-route.yaml
     │   ├── external-secrets.yaml
     ├── values.yaml
     └── values-override.yaml
