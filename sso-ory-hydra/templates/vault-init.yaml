@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: vault-auto-init-job
+  name: vault-init
   namespace: { { .Values.vault.namespace } }
   annotations:
     "helm.sh/hook": "pre-install"

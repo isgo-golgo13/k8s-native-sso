@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: vault-auto-pki-job
+  name: vault-init-pki
   namespace: { { .Values.vault.namespace } }
   annotations:
     "helm.sh/hook": "pre-install"

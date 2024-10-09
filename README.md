@@ -37,13 +37,13 @@ The following graphic shows the architectural relationship of this turn-key SSO 
 sso-ory-hydra
     ├── Chart.yaml
     ├── templates
-    │   ├── vault-auto-init-job.yaml
-    │   ├── vault-auto-unseal-job.yaml
-    │   ├── vault-auto-pki.yaml
-    │   ├── vault-auto-register-k8s-auth.yaml
-    │   ├── vault-init-configmap.yaml
-    │   ├── vault-unseal-configmap.yaml
-    │   ├── vault-k8s-auth-configmap.yaml
+    │   ├── vault-init.yaml
+    │   ├── vault-unseal.yaml
+    │   ├── vault-init-pki.yaml
+    │   ├── vault-register-k8s-auth.yaml
+    │   ├── vault-init-config.yaml
+    │   ├── vault-unseal-config.yaml
+    │   ├── vault-k8s-auth-config.yaml
     │   ├── cert-manager-issuer.yaml
     │   ├── external-dns-deployment.yaml
     │   ├── core-dns-config.yaml
