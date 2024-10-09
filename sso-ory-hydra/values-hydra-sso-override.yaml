@@ -23,7 +23,7 @@ tls:
   clientCertName: "client-cert"
 
 dns:
-  domain: "hydra.example.com"
+  domain: "example.com"
   adminHostname: "admin.hydra.example.com"
   clientHostname: "client.hydra.example.com"
   ttl: 60
