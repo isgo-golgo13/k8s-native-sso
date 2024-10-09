@@ -128,4 +128,5 @@ sso-ory-hydra
     │   ├── external-secrets.yaml
     ├── values.yaml
     └── values-override.yaml
+
 ```
