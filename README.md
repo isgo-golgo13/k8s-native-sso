@@ -73,6 +73,37 @@ helm repo update
 helm install cert-manager jetstack/cert-manager --namespace cert-manager --create-namespace --set installCRDs=true
 ```
 
+### Install of Nginx Fabric Controller Gateway API
+
+Installation of Nginx Gateway API (Nginx Fabric Controller) to Kubernetes Cluster using official Helm Chart.
+
+```shell
+helm repo add nginx-stable https://helm.nginx.com/stable
+helm repo update
+helm install nginx-gateway nginx-stable/nginx-ingress --namespace nginx-gateway --create-namespace
+```
+
+### Install of CoreDNS Operator with Kubernetes Plugin
+
+Installation of CoreDNS Operator to Kubernetes Cluster using official Helm Chart.
+
+```shell
+helm repo add coredns https://coredns.github.io/helm
+helm repo update
+helm install coredns coredns/coredns --namespace kube-system --create-namespace
+```
+
+### Install of Ory Hydra SSO OIDC-OAuth 2.0 Kubernetes Operator
+
+Installation of Ory Hydra SSO OIDC-OAuth 2.0 Operator to Kubernetes Cluster using official Helm Chart.
+
+```shell
+helm repo add ory https://k8s.ory.sh/helm/charts
+helm repo update
+helm install hydra ory/hydra --namespace hydra --create-namespace
+```
+
+
 
 ## Project Helm Chart
 
